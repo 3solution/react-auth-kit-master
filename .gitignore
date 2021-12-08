@@ -1,0 +1,6 @@
+node_modules
+dist
+types
+/env/
+coverage
+.eslintcache

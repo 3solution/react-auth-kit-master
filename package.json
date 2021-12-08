@@ -1,0 +1,112 @@
+{
+  "name": "react-auth-kit",
+  "version": "1.6.4",
+  "description": "Authentication Library for React, which makes Token based auth very easy",
+  "source": "src/index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/index.modern.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "scripts": {
+    "start": "rollup -cw",
+    "build": "run-s build:*",
+    "build:clean": "rimraf ./dist",
+    "build:dir": "mkdirp ./dist",
+    "build:build": "rollup -c",
+    "prepare": "run-s build && husky install",
+    "preversion": "run-s test",
+    "test": "run-s test:*",
+    "test:build": "run-s build",
+    "test:unit": "jest",
+    "test:lint": "eslint src/**/*.ts src/**/*.tsx --fix",
+    "test:unit:watch": "jest --watch"
+  },
+  "keywords": [
+    "react",
+    "auth",
+    "authentication",
+    "jwt",
+    "jsonwebtoken",
+    "token"
+  ],
+  "author": {
+    "name": "Arkadip Bhattacharya",
+    "email": "in2arkadipb13@gmail.com",
+    "url": "https://www.arkadip.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/react-auth-kit/react-auth-kit"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@types/jest": "^27.0.3",
+    "@types/js-cookie": "^3.0.1",
+    "@types/node": "^16.11.11",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "@types/react-router-dom": "^5.3.2",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "codecov": "^3.8.3",
+    "eslint": "^8.4.1",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-react": "^7.27.1",
+    "husky": "^7.0.4",
+    "jest": "^27.4.3",
+    "lint-staged": "^12.1.2",
+    "mkdirp": "^1.0.4",
+    "npm-run-all": "^4.1.5",
+    "react-dom": "^17.0.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.60.2",
+    "rollup-plugin-filesize": "^9.0.2",
+    "rollup-plugin-license": "^2.6.0",
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-terser": "^7.0.0",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "ts-jest": "^27.1.0",
+    "tslib": "^2.3.1",
+    "typedoc": "^0.22.10",
+    "typescript": "^4.5.2",
+    "utility-types": "^3.10.0"
+  },
+  "dependencies": {
+    "js-cookie": "^3.0.1",
+    "react": ">=16.8.0",
+    "react-router-dom": "^5.3.0"
+  },
+  "peerDependencies": {
+    "js-cookie": "^3.0.1",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "react-router-dom": "^5.3.0"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx,json,js}": "eslint --cache --fix"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  }
+}
